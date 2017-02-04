@@ -5,18 +5,36 @@
 
     <bean id="currentDate" class="java.util.Date"/>
 
-    <bean id="person" class="com.test.core.spring.beans.Person">
+    <bean id="person" class="com.test.core.spring.ioc.beans.Person">
         <property name="id" value="1"/>
         <property name="name" value="Vasiliy"/>
         <property name="birth" ref="currentDate"/>
     </bean>
 
-    <bean id="car" class="com.test.core.spring.beans.Car">
+    <bean id="car" class="com.test.core.spring.ioc.beans.Car">
         <property name="id" value="1"/>
         <property name="model" value="Kalina"/>
         <property name="year" value="2010"/>
         <property name="lastService" ref="currentDate"/>
         <property name="owner" ref="person"/>
+    </bean>
+
+    <bean id = "opelCar" class="com.test.core.spring.ioc.beans.Car">
+        <property name="id" value="2"/>
+        <property name="model" value="OpelAstra"/>
+        <property name="year" value="2012"/>
+        <property name="lastService" ref="currentDate"/>
+        <property name="owner" ref="person"/>
+    </bean>
+
+    <bean id="fordGarage" class="com.test.core.spring.ioc.beans.Garage">
+        <property name="number" value="4"/>
+        <property name="car" ref="car" />
+    </bean>
+
+    <bean id ="opelGarage" class = "com.test.core.spring.ioc.beans.Garage" >
+        <property name="number" value="2"/>
+        <property name="car" ref="opelCar" />
     </bean>
 
 </beans>
