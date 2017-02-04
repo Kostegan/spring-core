@@ -1,4 +1,4 @@
-package com.test.core.spring.beans;
+package com.test.core.spring.ioc.beans;
 
 import java.util.Date;
 

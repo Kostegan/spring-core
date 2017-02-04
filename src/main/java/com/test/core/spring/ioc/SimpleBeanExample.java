@@ -1,4 +1,4 @@
-package com.test.core.spring;
+package com.test.core.spring.ioc;
 
 import com.test.core.spring.beans.Car;
 import org.slf4j.Logger;
@@ -17,8 +17,8 @@ public class SimpleBeanExample {
 
         logger.debug("\n\n\n");
 
-        final Car car = context.getBean("car",Car.class);
-        System.out.println(car.getModel());
+        final Car car = context.getBean("car", Car.class);
+        System.out.println("Car model - " + car.getModel());
         logger.debug("Car model: {}", car.getModel());
     }
 }
