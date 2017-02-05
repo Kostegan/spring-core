@@ -79,7 +79,13 @@
     <!--scope example-->
     <!--====================================-->
 
-    <bean id="no-changing-date" class="java.util.Date" scope="singleton"/>
-    <bean id="changing-date" class="java.util.Date" scope="prototype"/>
+    <!--<bean id="no-changing-date" class="java.util.Date" scope="singleton"/>-->
+    <!--<bean id="changing-date" class="java.util.Date" scope="prototype"/>-->
+
+    <!--lazy-init example-->
+    <!--====================================-->
+
+    <bean id="not-lazy" class="java.util.Date" lazy-init="false"/>
+    <bean id="lazy" class="java.util.Date" lazy-init="true"/>
 
 </beans>

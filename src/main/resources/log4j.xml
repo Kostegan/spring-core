@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <category name="com.test.core.spring.scope.ScopeExample">
+    <category name="com.test.core.spring.lazyinit.LazyInitExample">
         <priority value="debug"/>
         <appender-ref ref="consoleAppender"/>
     </category>
