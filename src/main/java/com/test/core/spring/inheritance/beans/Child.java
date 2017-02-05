@@ -3,7 +3,7 @@ package com.test.core.spring.inheritance.beans;
 /**
  *
  */
-public class Child {
+public class Child extends Person {
     private Adult responsible;
 
     public Adult getResponsible() {
