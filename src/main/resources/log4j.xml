@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <category name="com.test.core.spring.inheritance">
+    <category name="com.test.core.spring.instantiation">
         <priority value="debug"/>
         <appender-ref ref="consoleAppender"/>
     </category>
