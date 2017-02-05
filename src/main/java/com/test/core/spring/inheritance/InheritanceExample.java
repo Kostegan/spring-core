@@ -11,20 +11,26 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  */
 public class InheritanceExample {
-    private static Logger logger = LoggerFactory.getLogger(InheritanceExample.class);
+    private static Logger log = LoggerFactory.getLogger(InheritanceExample.class);
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springContext.xml"});
 
-        logger.debug("\n\n\n");
-
+        log.debug("\n\n\n");
         final Child child = context.getBean("child", Child.class);
-        logger.debug("Child name: ", child.getName());
-        final Adult adult = context.getBean("adult", Adult.class);
-        System.out.println("++++++++++++++" + child.getName());
-        System.out.println("++++++++++++++" + adult.getPaspNum());
-        logger.debug("Child name: " + child.getName());
-        logger.debug("Child responsible is passport number: : " + child.getResponsible().getPaspNum());
-        logger.debug("Child responsible is passport number: : " + child.getResponsible().getName());
+        log.debug("Child name: {}", child.getName());
+        log.debug("Child responsible's Passport Number: {}", child.getResponsible().getPaspNum());
+
+//        final Child child = context.getBean("child", Child.class);
+//        log.debug("Child name: {}", child.getName());
+//        final Adult adult = context.getBean("adult", Adult.class);
+//        System.out.println("++++++++++++++" + child.getName());
+//        System.out.println("++++++++++++++" + adult.getPaspNum());
+//        log.debug("Child name: " + child.getName());
+//        log.debug("Child responsible is passport number: : " + child.getResponsible().getPaspNum());
+//        log.debug("Child responsible is passport number: : " + child.getResponsible().getName());
+//        System.out.println("========================================");
+//        log.debug("Child responsible is passport number: : ", child.getResponsible().getPaspNum());
+//        log.debug("Child responsible is passport number: : {}", child.getResponsible().getName());
     }
 }
