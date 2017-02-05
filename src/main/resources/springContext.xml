@@ -49,32 +49,37 @@
     <!--instantiation example-->
     <!--====================================-->
 
-    <bean id="currentDate" class="java.util.Date"/>
+    <!--<bean id="currentDate" class="java.util.Date"/>-->
 
-    <bean id="person-default-constructor" class="com.test.core.spring.instantiation.beans.Person">
-        <property name="id" value="1"/>
-        <property name="name" value="Igor"/>
+    <!--<bean id="person-default-constructor" class="com.test.core.spring.instantiation.beans.Person">-->
+        <!--<property name="id" value="1"/>-->
+        <!--<property name="name" value="Igor"/>-->
 
-        <property name="birth" ref="currentDate"/>
-        <!--We can use ref to specify reference bean or create bean right here-->
-        <!--<property name="birth">-->
-            <!--<bean class="java.util.Date"/>-->
-        <!--</property>-->
-    </bean>
+        <!--<property name="birth" ref="currentDate"/>-->
+        <!--&lt;!&ndash;We can use ref to specify reference bean or create bean right here&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="birth">&ndash;&gt;-->
+            <!--&lt;!&ndash;<bean class="java.util.Date"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</property>&ndash;&gt;-->
+    <!--</bean>-->
 
-    <bean id="person-specified-constructor" class="com.test.core.spring.instantiation.beans.Person">
-        <constructor-arg name="id" value="2"/>
-        <constructor-arg name="name" value="Fedor"/>
-        <constructor-arg name="birth" ref="currentDate"/>
-    </bean>
+    <!--<bean id="person-specified-constructor" class="com.test.core.spring.instantiation.beans.Person">-->
+        <!--<constructor-arg name="id" value="2"/>-->
+        <!--<constructor-arg name="name" value="Fedor"/>-->
+        <!--<constructor-arg name="birth" ref="currentDate"/>-->
+    <!--</bean>-->
 
-    <bean id="person-factory-method" class="com.test.core.spring.instantiation.beans.Person" factory-method="createInstance" />
+    <!--<bean id="person-factory-method" class="com.test.core.spring.instantiation.beans.Person" factory-method="createInstance" />-->
 
-    <bean id="person-factory-method-with-arg" class="com.test.core.spring.instantiation.beans.Person" factory-method="createInstance">
-        <constructor-arg name="id" value="3"/>
-        <constructor-arg name="name" value="Petr"/>
-        <constructor-arg name="birth" ref="currentDate"/>
-    </bean>
+    <!--<bean id="person-factory-method-with-arg" class="com.test.core.spring.instantiation.beans.Person" factory-method="createInstance">-->
+        <!--<constructor-arg name="id" value="3"/>-->
+        <!--<constructor-arg name="name" value="Petr"/>-->
+        <!--<constructor-arg name="birth" ref="currentDate"/>-->
+    <!--</bean>-->
 
+    <!--scope example-->
+    <!--====================================-->
+
+    <bean id="no-changing-date" class="java.util.Date" scope="singleton"/>
+    <bean id="changing-date" class="java.util.Date" scope="prototype"/>
 
 </beans>
