@@ -1,4 +1,4 @@
-package com.test.core.spring.instatntiation.beans;
+package com.test.core.spring.instantiation.beans;
 
 import java.util.Date;
 
