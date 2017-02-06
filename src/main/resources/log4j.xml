@@ -9,7 +9,12 @@
         </layout>
     </appender>
 
-    <category name="com.test.core.spring.lazyinit.LazyInitExample">
+    <category name="com.test.core.spring.initdestroy.beans.AnnotationsInitBean">
+        <priority value="debug"/>
+        <appender-ref ref="consoleAppender"/>
+    </category>
+
+    <category name="com.test.core.spring.initdestroy.InitDestroyExample">
         <priority value="debug"/>
         <appender-ref ref="consoleAppender"/>
     </category>

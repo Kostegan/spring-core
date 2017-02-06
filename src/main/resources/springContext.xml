@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-init-method="someDefaultInitMethod"
+       default-destroy-method="someDefaultDestroyMethod">
 
 
     <!--ioc example-->
@@ -85,7 +89,23 @@
     <!--lazy-init example-->
     <!--====================================-->
 
-    <bean id="not-lazy" class="java.util.Date" lazy-init="false"/>
-    <bean id="lazy" class="java.util.Date" lazy-init="true"/>
+    <!--<bean id="not-lazy" class="java.util.Date" lazy-init="false"/>-->
+    <!--<bean id="lazy" class="java.util.Date" lazy-init="true"/>-->
+
+    <!--Init -destroy method example-->
+    <!--====================================-->
+
+    <!--Specify Init and Destroy method-->
+    <!--<bean id="default-method-init" class="com.test.core.spring.initdestroy.beans.DefaultMethodInitBean" init-method="someDefaultInitMethod" destroy-method="someDefaultDestroyMethod"/>-->
+
+    <!--Init and Destroy methods specified by using Spring interfaces-->
+    <!--<bean class="com.test.core.spring.initdestroy.beans.SpringInterfaceInitBean"/>-->
+
+    <!--Init and Destroy methods specified by global attributes-->
+    <!--<bean class="com.test.core.spring.initdestroy.beans.DefaultMethodInitBean"/>-->
+
+    <!--Init and Destroy methods specified by specification's annotations-->
+    <context:annotation-config />
+    <bean class="com.test.core.spring.initdestroy.beans.AnnotationsInitBean"/>
 
 </beans>
